@@ -1,0 +1,36 @@
+{
+
+  "manifest_version": 2,
+  "name": "Quick Proxy (Burp / ZAP)",
+  "version": "1.0",
+  "description": "Modifie la configuration proxy du navigateur pour activer/désactiver l'utlisation d'un proxy tel que Burp Suite ou OWASP ZAP avec leurs paramètres par défaut",
+
+  "icons": {
+    "48": "icons/quickproxy-gray.png"
+  },
+"browser_action": {
+  "default_icon": {
+    "48": "icons/quickproxy-gray.png"
+  },
+  "default_title": "No Proxy. Activate it?"
+},
+
+
+    "browser_specific_settings": {
+
+  "gecko": {
+    "strict_min_version": "91.1.0"
+  }
+},
+
+  "background": {
+    "scripts": ["quickproxy.js"]
+  },
+  "permissions":[
+  "browserSettings",
+  "proxy",
+  "<all_urls>",
+  "storage"
+  ]
+  
+}
