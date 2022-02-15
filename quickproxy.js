@@ -15,7 +15,7 @@ function activateProxy(){
 	//-- necessary put it in the promise because if not the code keep run and has no effect
 	function onGot(item) {
 		
-		if( item.quickProxyState.isActive && item.quickProxyState.isActive === true ){
+		if( item.quickProxyState && item.quickProxyState.isActive && item.quickProxyState.isActive === true ){
 
 			quickProxyState.isActive = false;
 			proxySettings = {
