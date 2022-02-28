@@ -55,3 +55,6 @@ function activateProxy(){
 }
 
 browser.browserAction.onClicked.addListener(activateProxy);
+
+// adding listner on startup if we quit the browser without turn off
+browser.runtime.onStartup.addListener(activateProxy);
