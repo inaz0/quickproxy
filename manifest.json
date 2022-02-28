@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Quick Proxy (Burp / ZAP)",
-  "version": "1.3",
+  "version": "1.3.1",
   "description": "Modifie la configuration proxy du navigateur pour activer/désactiver l'utlisation d'un proxy tel que Burp Suite ou OWASP ZAP avec leurs paramètres par défaut",
 
   "icons": {

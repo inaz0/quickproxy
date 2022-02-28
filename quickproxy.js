@@ -56,5 +56,28 @@ function activateProxy(){
 
 browser.browserAction.onClicked.addListener(activateProxy);
 
+
+function controlIsActiveProxy(){
+	
+	//-- necessary put it in the promise because if not the code keep run and has no effect
+	function onGot(item) {
+		
+		if( item.quickProxyState && item.quickProxyState.isActive && item.quickProxyState.isActive === true ){
+
+			browser.browserAction.setIcon({path: "icons/quickproxy.png"});
+			browser.browserAction.setTitle({title: "Proxy activate."});
+			
+		}
+		else{
+		
+			browser.browserAction.setIcon({path: "icons/quickproxy-gray.png"});
+			browser.browserAction.setTitle({title: "No Proxy. Activate it?"});
+		}
+	}
+	
+	let isSettingItem = browser.storage.local.get('quickProxyState');
+	isSettingItem.then(onGot, onError);
+}
+
 // adding listner on startup if we quit the browser without turn off
-browser.runtime.onStartup.addListener(activateProxy);
+browser.runtime.onStartup.addListener(controlIsActiveProxy);
