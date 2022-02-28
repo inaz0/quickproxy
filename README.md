@@ -5,6 +5,11 @@ To support this little work you can buy me a coffee (https://www.buymeacoffee.co
 
 # Changelog
 
+
+1.3.2 : 
+
+* Bug of check if proxy is active or not
+
 1.3.1 : 
 
 * Correct the bug introduce in 1.3 which auto switch the proxy on browser startup

@@ -61,7 +61,7 @@ function controlIsActiveProxy(){
 	
 	//-- necessary put it in the promise because if not the code keep run and has no effect
 	function onGot(item) {
-		
+	
 		if( item.quickProxyState && item.quickProxyState.isActive && item.quickProxyState.isActive === true ){
 
 			browser.browserAction.setIcon({path: "icons/quickproxy.png"});
@@ -74,6 +74,12 @@ function controlIsActiveProxy(){
 			browser.browserAction.setTitle({title: "No Proxy. Activate it?"});
 		}
 	}
+	
+	function onError(error) {
+		console.log('ko')
+		quickProxyState.isActive = false;
+	}
+
 	
 	let isSettingItem = browser.storage.local.get('quickProxyState');
 	isSettingItem.then(onGot, onError);
